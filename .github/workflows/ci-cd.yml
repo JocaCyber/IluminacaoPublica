@@ -4,24 +4,46 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
+    - name: Check out code
       uses: actions/checkout@v2
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '8.0.302'
+        dotnet-version: '8.0.x'  # Altere para a versão do .NET que você está usando
 
     - name: Restore dependencies
-      run: dotnet restore ./ProjetoSIP/SistemaIluminacaoPublica.csproj
+      run: dotnet restore ./ProjetoSIP/SistemaIluminacaoPublica/SistemaIluminacaoPublica.csproj
+
     - name: Build
-      run: dotnet build ./ProjetoSIP/SistemaIluminacaoPublica.csproj --configuration Release
+      run: dotnet build ./ProjetoSIP/SistemaIluminacaoPublica/SistemaIluminacaoPublica.csproj --configuration Release
 
     - name: Test
-      run: dotnet test ../ProjetoSIP/SistemaIluminacaoPublica.csproj --configuration Release
+      run: dotnet test ./ProjetoSIP/SistemaIluminacaoPublica/SistemaIluminacaoPublica.csproj --configuration Release --no-build --verbosity normal
+
+    - name: Publish
+      run: dotnet publish ./ProjetoSIP/SistemaIluminacaoPublica/SistemaIluminacaoPublica.csproj --configuration Release --output ./output
+
+  deploy:
+    runs-on: windows-latest
+    needs: build  # Aguarda o job de build ser concluído com sucesso
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Deploy to Staging
+      run: echo "Deploying to Staging Environment"
+      # Aqui você deve adicionar os comandos para seu ambiente de staging
+
+    - name: Deploy to Production
+      run: echo "Deploying to Production Environment"
+      # Aqui você deve adicionar os comandos para seu ambiente de produção
