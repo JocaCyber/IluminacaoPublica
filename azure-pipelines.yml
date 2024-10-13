@@ -8,17 +8,21 @@ trigger:
 pool:
   vmImage: 'windows-latest'  # Imagem de VM que será usada
 
-steps:
-- task: DotNetCoreCLI@2  # Usando a tarefa DotNetCoreCLI
-  displayName: 'Build the project'
-  inputs:
-    command: 'build'  # Comando para construir o projeto
-    projects: '**/*.csproj'  # Localização dos arquivos .csproj
-    arguments: '--configuration Release'  # Argumentos adicionais
+jobs:
+- job: Build
+  pool:
+    vmImage: 'windows-latest'
+  steps:
+  - task: DotNetCoreCLI@2  # Usando a tarefa DotNetCoreCLI
+    displayName: 'Build the project'
+    inputs:
+      command: 'build'  # Comando para construir o projeto
+      projects: '**/*.csproj'  # Localização dos arquivos .csproj
+      arguments: '--configuration Release'  # Argumentos adicionais
 
-- task: DotNetCoreCLI@2  # Usando a tarefa DotNetCoreCLI
-  displayName: 'Run tests'
-  inputs:
-    command: 'test'  # Comando para executar os testes
-    projects: '**/*.csproj'  # Localização dos arquivos .csproj
-    arguments: '--configuration Release'  # Argumentos adicionais
+  - task: DotNetCoreCLI@2  # Usando a tarefa DotNetCoreCLI
+    displayName: 'Run tests'
+    inputs:
+      command: 'test'  # Comando para executar os testes
+      projects: '**/*.csproj'  # Localização dos arquivos .csproj
+      arguments: '--configuration Release'  # Argumentos adicionais
