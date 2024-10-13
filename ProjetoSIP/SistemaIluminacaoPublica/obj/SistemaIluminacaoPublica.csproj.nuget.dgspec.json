@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuário\\ProjetoAPI\\SistemaIluminacaoPublica\\SistemaIluminacaoPublica.csproj": {}
+    "C:\\Users\\Usuário\\IluminacaoPublica\\ProjetoSIP\\SistemaIluminacaoPublica\\SistemaIluminacaoPublica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuário\\ProjetoAPI\\SistemaIluminacaoPublica\\SistemaIluminacaoPublica.csproj": {
+    "C:\\Users\\Usuário\\IluminacaoPublica\\ProjetoSIP\\SistemaIluminacaoPublica\\SistemaIluminacaoPublica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuário\\ProjetoAPI\\SistemaIluminacaoPublica\\SistemaIluminacaoPublica.csproj",
+        "projectUniqueName": "C:\\Users\\Usuário\\IluminacaoPublica\\ProjetoSIP\\SistemaIluminacaoPublica\\SistemaIluminacaoPublica.csproj",
         "projectName": "SistemaIluminacaoPublica",
-        "projectPath": "C:\\Users\\Usuário\\ProjetoAPI\\SistemaIluminacaoPublica\\SistemaIluminacaoPublica.csproj",
+        "projectPath": "C:\\Users\\Usuário\\IluminacaoPublica\\ProjetoSIP\\SistemaIluminacaoPublica\\SistemaIluminacaoPublica.csproj",
         "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuário\\ProjetoAPI\\SistemaIluminacaoPublica\\obj\\",
+        "outputPath": "C:\\Users\\Usuário\\IluminacaoPublica\\ProjetoSIP\\SistemaIluminacaoPublica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config",
