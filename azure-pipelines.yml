@@ -1,37 +1,24 @@
+# Este é um pipeline de build simples para um projeto .NET
+
 trigger:
-  - main # Isso fará o pipeline rodar toda vez que houver um push na branch main.
+  branches:
+    include:
+      - main  # Altere para o nome do seu branch principal
 
 pool:
-  vmImage: 'windows-latest' # Utiliza a imagem mais recente do Windows.
+  vmImage: 'windows-latest'  # Imagem de VM que será usada
 
 steps:
-  - task: DotNetCoreCLI@2
-    displayName: 'Restore dependencies'
-    inputs:
-      command: 'restore'
-      projects: '**/*.csproj'
+- task: DotNetCoreCLI@2  # Usando a tarefa DotNetCoreCLI
+  displayName: 'Build the project'
+  inputs:
+    command: 'build'  # Comando para construir o projeto
+    projects: '**/*.csproj'  # Localização dos arquivos .csproj
+    arguments: '--configuration Release'  # Argumentos adicionais
 
-  - task: DotNetCoreCLI@2
-    displayName: 'Build'
-    inputs:
-      command: 'build'
-      projects: '**/*.csproj'
-
-  - task: DotNetCoreCLI@2
-    displayName: 'Test'
-    inputs:
-      command: 'test'
-      projects: '**/*.csproj'
-
-  - task: DotNetCoreCLI@2
-    displayName: 'Publish'
-    inputs:
-      command: 'publish'
-      projects: '**/*.csproj'
-      arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)'
-
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      ArtifactName: 'drop'
-      publishLocation: 'Container'
+- task: DotNetCoreCLI@2  # Usando a tarefa DotNetCoreCLI
+  displayName: 'Run tests'
+  inputs:
+    command: 'test'  # Comando para executar os testes
+    projects: '**/*.csproj'  # Localização dos arquivos .csproj
+    arguments: '--configuration Release'  # Argumentos adicionais
