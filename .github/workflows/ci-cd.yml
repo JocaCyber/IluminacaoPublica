@@ -19,10 +19,9 @@ jobs:
         dotnet-version: '8.0.302'
 
     - name: Restore dependencies
-      run: dotnet restore ./IluminaçõesPublica/SistemaIluminacaoPublica.csproj
-
+      run: dotnet restore ./ProjetoSIP/SistemaIluminacaoPublica.csproj
     - name: Build
-      run: dotnet build ./IluminaçõesPublica/SistemaIluminacaoPublica.csproj --configuration Release
+      run: dotnet build ./ProjetoSIP/SistemaIluminacaoPublica.csproj --configuration Release
 
     - name: Test
-      run: dotnet test ./IluminaçõesPublica/SistemaIluminacaoPublica.csproj --configuration Release
+      run: dotnet test ../ProjetoSIP/SistemaIluminacaoPublica.csproj --configuration Release
