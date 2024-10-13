@@ -14,23 +14,15 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '8.0.x'  # Atualize para a versão correta
+        dotnet-version: '8.0.302'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./IluminaçõesPublica/SistemaIluminacaoPublica.csproj
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build ./IluminaçõesPublica/SistemaIluminacaoPublica.csproj --configuration Release
 
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
-
-  deploy:
-    runs-on: windows-latest
-    needs: build
-
-    steps:
-    - name: Deploy to Production
-      run: echo "Deploying to Production"
+      run: dotnet test ./IluminaçõesPublica/SistemaIluminacaoPublica.csproj --configuration Release
