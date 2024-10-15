@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaIluminacaoPublica")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79ca0f0ea513f8ae6d5d8937598210e135be446b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ea608813972ebb70803ae6a4a1bde6a5f8e536b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaIluminacaoPublica")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaIluminacaoPublica")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
