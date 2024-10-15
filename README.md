@@ -1,24 +1,22 @@
-<<<<<<< HEAD
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Sistema de Iluminação Pública Inteligente
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Requisitos
+- .NET 8.0 SDK
+- Docker e Docker Compose
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Como executar o projeto
+### Usando Docker Compose
+1. Execute `docker-compose up --build` no diretório do projeto.
+2. A aplicação estará disponível em `http://localhost:5000`.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+### Executando Localmente
+1. Navegue até a pasta do projeto: `cd ProjetoSIP/SistemaIluminacaoPublica`.
+2. Execute `dotnet build` para compilar o projeto.
+3. Execute `dotnet run` para iniciar a aplicação.
+4. Acesse `http://localhost:5000`.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
-=======
-# IluminacaoPublica
->>>>>>> 158e23d9eeff5853c51f3dc432b37235f52543bf
+## Estrutura do Projeto
+- Controllers: Controladores da API
+- Models: Modelos usados pela aplicação
+- Dockerfile: Configuração para containerização da aplicação
+- docker-compose.yml: Arquivo de orquestração Docker
