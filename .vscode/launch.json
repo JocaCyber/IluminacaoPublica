@@ -1,40 +1,25 @@
 {
-    "version": "2.0.0",
-    "tasks": [
+    "version": "0.2.0",
+    "configurations": [
         {
-            "label": "build",
-            "type": "process",
-            "command": "dotnet",
-            "args": [
-                "build",
-                "${workspaceFolder}/ProjetoSIP/SistemaIluminacaoPublica/SistemaIluminacaoPublica.csproj"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
+            "name": ".NET Core Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ProjetoSIP/SistemaIluminacaoPublica/bin/Debug/net8.0/SistemaIluminacaoPublica.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ProjetoSIP/SistemaIluminacaoPublica",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
             },
-            "presentation": {
-                "reveal": "silent"
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
             },
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "run",
-            "type": "process",
-            "command": "dotnet",
-            "args": [
-                "run",
-                "--project",
-                "${workspaceFolder}/ProjetoSIP/SistemaIluminacaoPublica/SistemaIluminacaoPublica.csproj"
-            ],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
-            "presentation": {
-                "reveal": "always"
-            },
-            "problemMatcher": []
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/ProjetoSIP/SistemaIluminacaoPublica/Views"
+            }
         }
     ]
 }
